@@ -1,0 +1,6 @@
+robotframework
+robotframework-seleniumlibrary
+robotframework-requests
+robotframework-pabot
+PyYAML
+regex
