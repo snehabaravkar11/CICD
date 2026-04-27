@@ -4,7 +4,7 @@ Resource    ../../resources/locators/login_locators.resource
 
 *** Test Cases ***
 Valid Login Test
-    tag    smoke
+    [Tags]    smoke
     Open Application
     Input Text    ${USERNAME_FIELD}    standard_user
     Input Text    ${PASSWORD_FIELD}    secret_sauce
