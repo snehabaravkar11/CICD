@@ -11,7 +11,8 @@ echo "Building the Project.........."
 stage('Test') 
 {
 steps{
-echo "Testing the Project.........."
+pip install -r requirements.txt
+robot tests/api/users_api.robot
 }
 }
 stage('Deploy') 
