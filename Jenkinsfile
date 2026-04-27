@@ -11,7 +11,7 @@ pipeline {
 				sh '''
 					python3 -m pip install --upgrade pip
 					python3 -m pip install -r requirements.txt
-					robot tests/api/users_api.robot
+					python3 -m robot tests/api/users_api.robot
 				'''
 			}
 		}
