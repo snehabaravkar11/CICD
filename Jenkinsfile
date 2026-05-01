@@ -22,13 +22,13 @@ pipeline {
 		}
 		stage('Publish Report') {
 			steps {
-				publishHTML([
+				publishHTML(target: [
+					allowMissing: false,
+					alwaysLinkToLastBuild: true,
+					keepAll: true,
 					reportDir: 'reports',
 					reportFiles: 'report.html',
-					reportName: 'Robot Framework Report',
-					keepAll: true,
-					alwaysLinkToLastBuild: true,
-					allowMissing: false
+					reportName: 'Robot Framework Report'
 				])
 				archiveArtifacts artifacts: 'reports/*.html, reports/*.xml', fingerprint: true
 			}
