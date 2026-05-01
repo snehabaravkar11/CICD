@@ -12,6 +12,7 @@ pipeline {
 					python3 -m pip install --upgrade pip
 					python3 -m pip install -r requirements.txt
 					python3 -m robot --include smoke tests/
+					python3 run_tests.py
 				'''
 			}
 		}
