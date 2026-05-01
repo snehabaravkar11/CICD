@@ -20,6 +20,19 @@ pipeline {
 				echo "Deploying the Project.........."
 			}
 		}
+		stage('Publish Report') {
+			steps {
+				publishHTML([
+					reportDir: 'reports',
+					reportFiles: 'report.html',
+					reportName: 'Robot Framework Report',
+					keepAll: true,
+					alwaysLinkToLastBuild: true,
+					allowMissing: false
+				])
+				archiveArtifacts artifacts: 'reports/*.html, reports/*.xml', fingerprint: true
+			}
+		}
 	}
 }
 
