@@ -19,6 +19,21 @@ pipeline {
 		stage('Deploy') {
 			steps {
 				echo "Deploying the Project.........."
+				always {
+
+            robot outputPath: 'reports'
+
+            archiveArtifacts artifacts: 'reports/*'
+
+        }
+
+        success {
+            echo 'Tests Passed!'
+        }
+
+        failure {
+            echo 'Tests Failed!'
+        }
 			}
 		}
 	}
